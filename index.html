@@ -3,24 +3,313 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>República Esperanza</title>
+  <meta name="description" content="República de Esperanza - Movimiento por la Salvación de la República (MSR). La verdad que nadie quiere contar." />
+  <meta name="keywords" content="MSR, República Esperanza, política, diáspora, justicia social, República Dominicana" />
+  <meta name="author" content="Alejandro Ortiz" />
+  <meta property="og:title" content="República de Esperanza" />
+  <meta property="og:description" content="Movimiento por la Salvación de la República - Luchando por una República Democrática, Popular y Revolucionaria." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://republicaesperanza.com" />
+  <meta property="og:image" content="https://placehold.co/1200x630/CE1126/FFFFFF?text=REPÚBLICA+DE+ESPERANZA" />
+  <title>República de Esperanza</title>
   <style>
-    body { background: #000; color: white; font-family: sans-serif; padding: 2rem; }
-    form { margin-top: 2rem; }
-    input, textarea { width: 100%; padding: 0.5rem; margin: 0.5rem 0; background: #111; color: white; }
-    button { background: red; color: white; padding: 0.75rem; border: none; cursor: pointer; }
+    :root {
+      --red: #CE1126;
+      --green: #009B3A;
+      --yellow: #FEDD00;
+      --black: #000000;
+      --gray-dark: #111;
+      --gray: #333;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: var(--black);
+      color: white;
+      font-family: 'Georgia', serif;
+      line-height: 1.7;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      background-color: var(--red);
+      border-bottom: 4px solid var(--green);
+      padding: 1rem 0;
+      position: relative;
+    }
+    .msr-logo {
+      background-color: var(--black);
+      border: 2px solid var(--yellow);
+      padding: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .star { color: var(--red); font-size: 1.5rem; }
+    h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+    .tagline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+    }
+    nav {
+      background-color: var(--green);
+      border-bottom: 2px solid var(--red);
+      padding: 0.75rem 0;
+    }
+    nav button {
+      background-color: var(--red);
+      color: white;
+      border: 2px solid var(--black);
+      padding: 0.5rem 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin: 0 0.25rem;
+      cursor: pointer;
+    }
+    main {
+      padding: 2rem 0;
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 4px solid var(--red);
+      font-size: 2rem;
+      color: var(--yellow);
+    }
+    .section-title.green { color: var(--green); border-bottom-color: var(--green); }
+    .section-title.red { color: var(--red); border-bottom-color: var(--green); }
+    .card {
+      background-color: #222;
+      border: 4px solid var(--green);
+      margin: 1rem 0;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card.red-border { border-color: var(--red); }
+    .card.yellow-border { border-color: var(--yellow); }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 2px solid #444;
+    }
+    .badge {
+      background-color: var(--green);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .badge.red { background-color: var(--red); }
+    .contact-grid, .grid-2, .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 768px) {
+      .contact-grid, .grid-2 { grid-template-columns: 1fr 1fr; }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      background-color: var(--black);
+      border: 2px solid #444;
+      color: white;
+      font-family: 'Georgia', serif;
+    }
+    button, .btn {
+      background-color: var(--red);
+      color: white;
+      border: 2px solid var(--black);
+      padding: 0.75rem;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 1rem;
+      text-transform: uppercase;
+    }
+    footer {
+      background-color: #0a3a0a;
+      border-top: 4px solid var(--red);
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+    .text-center { text-align: center; }
+    .mb-1 { margin-bottom: 0.5rem; }
+    .mb-2 { margin-bottom: 1rem; }
+    .quote {
+      font-style: italic;
+      color: var(--yellow);
+      padding: 1rem;
+      border-left: 4px solid var(--red);
+      margin: 1.5rem 0;
+    }
   </style>
 </head>
 <body>
-  <h1>República Esperanza</h1>
-  <p>La verdad que nadie quiere contar.</p>
-  
-  <form action="https://formspree.io/f/xanpekev" method="POST">
-    <input type="text" name="name" placeholder="Tu nombre" required>
-    <input type="email" name="email" placeholder="tu@email.com" required>
-    <textarea name="message" placeholder="Tu mensaje..." required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
+  <header>
+    <div class="container">
+      <div class="text-center">
+        <div class="msr-logo">
+          <span class="star">★</span>
+          <span style="color: var(--yellow); font-weight: bold;">MSR</span>
+        </div>
+        <h1>REPÚBLICA DE ESPERANZA</h1>
+        <div class="tagline">
+          <span>📰 LA VERDAD QUE NADIE QUIERE CONTAR</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container text-center">
+      <button>INICIO</button>
+      <button>SOBRE NOSOTROS</button>
+      <button>VALORES</button>
+      <button>ACTIVIDADES</button>
+      <button>DIÁSPORA</button>
+      <button>CONTACTO</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="section">
+      <div class="card" style="border-color: var(--yellow);">
+        <div style="background: linear-gradient(90deg, #8b0000, #006400); padding: 2rem; border: 4px solid var(--yellow);">
+          <div style="color: var(--red); font-weight: bold; margin-bottom: 1rem;">¡LLAMADO A LA ACCIÓN!</div>
+          <h2 style="font-size: 2.2rem; color: var(--yellow); margin-bottom: 1rem;">
+            ¡ÚNETE A LA LUCHA POR UNA REPÚBLICA DEMOCRÁTICA, POPULAR Y REVOLUCIONARIA!
+          </h2>
+          <p>
+            El Movimiento por la Salvación de la República convoca a todas las fuerzas populares a organizarse, resistir y construir el futuro que merecemos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section class="section">
+      <h2 class="section-title red">
+        <span>✊</span> SOBRE NOSOTROS <span>✊</span>
+      </h2>
+      <div class="card red-border">
+        <p class="mb-2">
+          El <strong>Movimiento por la Salvación de la República (MSR)</strong> nace como respuesta a la crisis moral, política y económica que asfixia a nuestro pueblo.
+        </p>
+        <p class="mb-2">
+          Inspirados en el pensamiento de Hostos, los restauradores y las luchas populares del siglo XX, nos proponemos construir una República que garantice la justicia, la soberanía y la dignidad humana.
+        </p>
+        <div class="quote">
+          "Política sin Moral es indignidad" — Eugenio María de Hostos
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="section">
+      <h2 class="section-title green">
+        <span>🌱</span> NUESTROS VALORES <span>🌱</span>
+      </h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Solidaridad</h3>
+          <p>Actuamos con empatía y compromiso con las luchas del pueblo trabajador, campesino y marginado.</p>
+        </div>
+        <div class="card">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Justicia Social</h3>
+          <p>Defendemos la redistribución de la riqueza, la educación y salud públicas, y los derechos de todos los sectores oprimidos.</p>
+        </div>
+        <div class="card">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Antiimperialismo</h3>
+          <p>Rechazamos toda forma de dominación extranjera y luchamos por la soberanía nacional en todos los ámbitos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actividades -->
+    <section class="section">
+      <h2 class="section-title">
+        <span>📅</span> ACTIVIDADES RECIENTES <span>📅</span>
+      </h2>
+      <div class="grid-2">
+        <div class="card yellow-border">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Asamblea Nacional por la Soberanía Alimentaria</h3>
+          <p>22 de mayo, 2024 — Santo Domingo</p>
+          <p>Agricultores, economistas y comunidades debatieron soluciones a la crisis alimentaria.</p>
+        </div>
+        <div class="card yellow-border">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Campaña "Educación para Todos"</h3>
+          <p>21 de mayo, 2024 — Barrios populares</p>
+          <p>Brigadas de alfabetización y apoyo escolar en zonas marginadas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section" id="contacto">
+      <h2 class="section-title">
+        <span>✉️</span> CONTACTO <span>📞</span>
+      </h2>
+      <div class="contact-grid">
+        <div class="card yellow-border">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Escríbenos</h3>
+          <form action="https://formspree.io/f/xanpekev" method="POST">
+            <input type="text" name="name" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="tu@email.com" required>
+            <textarea name="message" placeholder="Tu mensaje..." rows="5" required></textarea>
+            <button type="submit">Enviar Mensaje</button>
+          </form>
+        </div>
+        <div class="card" style="border-color: var(--green);">
+          <h3 style="color: var(--green); margin-bottom: 1rem;">Únete a Nosotros</h3>
+          <p>📍 Santo Domingo, República Dominicana</p>
+          <p>✉️ contacto@republicaesperanza.org</p>
+          <div style="margin-top: 1rem; padding: 1rem; background: var(--black); border: 2px solid var(--red);">
+            <p style="color: var(--red); font-style: italic;">
+              "La esperanza no es un sentimiento, es una decisión política."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <div style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">REPÚBLICA DE ESPERANZA</div>
+      <p>© 2024 - Movimiento por la Salvación de la República (MSR)</p>
+      <p style="color: var(--red); margin-top: 0.5rem;">¡LA VERDAD ESTÁ EN LAS SOMBRAS!</p>
+    </div>
+  </footer>
 </body>
 </html>
-<form action="https://formspree.io/f/xanpekev" method="POST">
