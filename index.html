@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="República de Esperanza - La verdad que nadie quiere contar. Movimiento por la Salvación de la República (MSR)." />
-  <meta name="keywords" content="MSR, República Esperanza, política, diáspora, noticias, República Dominicana" />
-  <meta name="author" content="Pablo Ortiz" />
+  <meta name="description" content="República de Esperanza - Movimiento por la Salvación de la República (MSR). La verdad que nadie quiere contar." />
+  <meta name="keywords" content="MSR, República Esperanza, política, diáspora, justicia social, República Dominicana" />
+  <meta name="author" content="Alejandro Ortiz" />
   <meta property="og:title" content="República de Esperanza" />
-  <meta property="og:description" content="La verdad que nadie quiere contar. Movimiento por la Salvación de la República." />
+  <meta property="og:description" content="Movimiento por la Salvación de la República - Luchando por una República Democrática, Popular y Revolucionaria." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://republicaesperanza.com" />
   <meta property="og:image" content="https://placehold.co/1200x630/CE1126/FFFFFF?text=REPÚBLICA+DE+ESPERANZA" />
@@ -30,7 +30,7 @@
       background-color: var(--black);
       color: white;
       font-family: 'Georgia', serif;
-      line-height: 1.6;
+      line-height: 1.7;
     }
     .container {
       width: 90%;
@@ -52,10 +52,7 @@
       gap: 0.5rem;
       margin-bottom: 1rem;
     }
-    .star {
-      color: var(--red);
-      font-size: 1.5rem;
-    }
+    .star { color: var(--red); font-size: 1.5rem; }
     h1 {
       font-size: 2.5rem;
       text-shadow: 0 0 10px rgba(255,255,255,0.5);
@@ -86,6 +83,9 @@
     main {
       padding: 2rem 0;
     }
+    .section {
+      margin-bottom: 3rem;
+    }
     .section-title {
       display: flex;
       align-items: center;
@@ -102,7 +102,11 @@
       background-color: #222;
       border: 4px solid var(--green);
       margin: 1rem 0;
-      padding: 1rem;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
     }
     .card.red-border { border-color: var(--red); }
     .card.yellow-border { border-color: var(--yellow); }
@@ -122,14 +126,15 @@
       text-transform: uppercase;
     }
     .badge.red { background-color: var(--red); }
-    .contact-grid {
+    .contact-grid, .grid-2, .grid-3 {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
       margin-top: 2rem;
     }
     @media (min-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid, .grid-2 { grid-template-columns: 1fr 1fr; }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
     }
     input, textarea {
       width: 100%;
@@ -140,7 +145,7 @@
       color: white;
       font-family: 'Georgia', serif;
     }
-    button {
+    button, .btn {
       background-color: var(--red);
       color: white;
       border: 2px solid var(--black);
@@ -149,6 +154,7 @@
       cursor: pointer;
       width: 100%;
       margin-top: 1rem;
+      text-transform: uppercase;
     }
     footer {
       background-color: #0a3a0a;
@@ -159,6 +165,13 @@
     .text-center { text-align: center; }
     .mb-1 { margin-bottom: 0.5rem; }
     .mb-2 { margin-bottom: 1rem; }
+    .quote {
+      font-style: italic;
+      color: var(--yellow);
+      padding: 1rem;
+      border-left: 4px solid var(--red);
+      margin: 1.5rem 0;
+    }
   </style>
 </head>
 <body>
@@ -179,109 +192,123 @@
 
   <nav>
     <div class="container text-center">
-      <button>PRIMERA PLANA</button>
-      <button>POLÍTICA</button>
-      <button>MISTERIO</button>
+      <button>INICIO</button>
+      <button>SOBRE NOSOTROS</button>
+      <button>VALORES</button>
+      <button>ACTIVIDADES</button>
       <button>DIÁSPORA</button>
-      <button>MSR</button>
-      <button>INTERNACIONAL</button>
       <button>CONTACTO</button>
     </div>
   </nav>
 
   <main class="container">
-    <!-- Featured Article -->
-    <div class="card" style="border-color: var(--yellow);">
-      <div style="background: linear-gradient(90deg, #8b0000, #006400); padding: 1.5rem; border: 4px solid var(--yellow);">
-        <div style="color: var(--red); font-weight: bold; margin-bottom: 1rem;">¡EXCLUSIVA!</div>
-        <h2 style="font-size: 2rem; color: var(--yellow); margin-bottom: 1rem;">
-          ¡ALERTA NACIONAL! GOBIERNO DECLARA ESTADO DE EMERGENCIA ECONÓMICA
-        </h2>
-        <p style="margin-bottom: 1rem;">
-          El presidente ha convocado a todas las fuerzas políticas y sociales a un diálogo nacional urgente. El MSR exige participación popular en las decisiones que afectarán al pueblo dominicano.
+    <!-- Hero -->
+    <section class="section">
+      <div class="card" style="border-color: var(--yellow);">
+        <div style="background: linear-gradient(90deg, #8b0000, #006400); padding: 2rem; border: 4px solid var(--yellow);">
+          <div style="color: var(--red); font-weight: bold; margin-bottom: 1rem;">¡LLAMADO A LA ACCIÓN!</div>
+          <h2 style="font-size: 2.2rem; color: var(--yellow); margin-bottom: 1rem;">
+            ¡ÚNETE A LA LUCHA POR UNA REPÚBLICA DEMOCRÁTICA, POPULAR Y REVOLUCIONARIA!
+          </h2>
+          <p>
+            El Movimiento por la Salvación de la República convoca a todas las fuerzas populares a organizarse, resistir y construir el futuro que merecemos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section class="section">
+      <h2 class="section-title red">
+        <span>✊</span> SOBRE NOSOTROS <span>✊</span>
+      </h2>
+      <div class="card red-border">
+        <p class="mb-2">
+          El <strong>Movimiento por la Salvación de la República (MSR)</strong> nace como respuesta a la crisis moral, política y económica que asfixia a nuestro pueblo.
         </p>
-        <div style="font-size: 0.9rem; color: #aaa;">
-          Por: El Equipo de Investigación • Hoy, 10:15
+        <p class="mb-2">
+          Inspirados en el pensamiento de Hostos, los restauradores y las luchas populares del siglo XX, nos proponemos construir una República que garantice la justicia, la soberanía y la dignidad humana.
+        </p>
+        <div class="quote">
+          "Política sin Moral es indignidad" — Eugenio María de Hostos
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Diáspora Section -->
-    <h2 class="section-title green">
-      <span>🌎</span> DIÁSPORA DOMINICANA <span>📍</span>
-    </h2>
-    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
-      <div class="card">
-        <img src="https://placehold.co/400x250/CE1126/FFFFFF?text=MIAMI+DOMINICANA" alt="Diáspora Miami">
-        <div class="badge">Diáspora</div>
-        <h3 class="mb-1" style="color: var(--yellow); font-size: 1.25rem;">DOMINICANOS EN MIAMI ORGANIZAN MARCHA POR LA UNIDAD NACIONAL</h3>
-        <p class="mb-1">Miles de compatriotas se congregaron en Little Havana para exigir políticas que fortalezcan los lazos con la patria.</p>
-        <div style="font-size: 0.85rem; color: var(--green);">📍 Miami, Florida</div>
-        <div style="font-size: 0.85rem; color: #aaa;">Isabel Contreras • 22 de mayo, 2024</div>
-      </div>
-    </div>
-
-    <!-- MSR Section -->
-    <h2 class="section-title red">
-      <span>❤️</span> MOVIMIENTO POR LA SALVACIÓN DE LA REPÚBLICA (MSR) <span>❤️</span>
-    </h2>
-    <div class="card red-border">
-      <h3 style="color: var(--yellow); text-align: center; margin-bottom: 1rem;">DECLARACIÓN DE PRINCIPIO DEL MSR</h3>
-      <p style="white-space: pre-line; font-size: 0.95rem;">
-Declaración de Principio
-Del Movimiento Por la Salvación de la República (MSR)
-Política sin Moral es indignidad (Hostos)
-
-En este momento en donde todo parece necesitar nuevas definiciones, donde las aspiraciones y las esperanzas parecen inalcanzables para los pobres (obreros (as), campesinos (as), mujeres, domínico-haitianos (as), chiriperos (as), jóvenes, niños y niñas). Hombres y Mujeres que hemos soñado por más de dos décadas con una República Democrática, Popular, Revolucionaria, humana, Nos resistimos a dejar de soñar y luchar contra la desigualdad, el individualismo, la opresión del capitalismo salvaje, local e imperial.
-
-Por tal razón nos constituimos en una expresión política, democrática, revolucionaria, anti-imperialista, solidaria e internacionalista, con el nombre de Movimiento Por la Salvación de la República (MSR), que enarbola y rescate los aportes de las generaciones de luchadores (as) que nos precedieron y los que nos acompañaron en la lucha por alcanzar una. República Democrática, Popular, Revolucionaria
-
-MSR se propone lanzar una campaña permanente por una República que revierta el concepto nacionalista del chovinismo estrecho a una noción de Soberanía Popular, que extienda el concepto de República más allá de las fronteras territoriales hasta cubrir a los que se consideran parte del pueblo dominicano aún hallan nacido o vivan en el exterior.
-
-Creemos y abogamos por los valores fundamentales de La libertad solidaria y de La justicia. Lo hacemos conforme a nuestra concepción del hombre y de la mujer en la sociedad actual porque creemos que son seres libres. Pero esa libertad tiene una forma responsable de expresarse y un límite moral en función de la concepción ética que tenga La sociedad.
-
-La libertad no debe ser obstaculizada por las condiciones bajas que vive el ser humano. Por ello consideramos una tarea de nuestro Partido. Hacer oposición a la Opresión, a la Miseria, a la Dependencia, Luchar contra todas las limitaciones que impidan el libre desarrollo del pueblo dominicana y que se garanticen las condiciones materiales de la libertad.
-
-Creemos que es necesario. Como fuerza política popular y de masas tener conciencia de los graves problemas que afectan al mundo. Creemos en el trascendental compromiso de convertirnos en el Movimiento promotor de un nuevo orden social, que sea un proyecto histórico a la satisfacción de todos. Nuestras aspiraciones por la justicia nos llevan al diseño de una política operativa. Basada en los valores fundamentales de los fundadores, restauradores, Raza Inmortal, Minerva, Manolo, Amaury, Caamaño y otros/as héroes y mártires de nuestra república.
-
-Creemos que la educación y la salud deben ser derechos que correspondan en igualdad de condiciones a todos. El régimen político que aspiramos a construir. Necesitará de ciudadanos capacitados y preparados técnica, científica y culturalmente...
-
-Creemos que es importante que el sector público se haga cargo de la mayoría de los servicios colectivos y juegue un papel significativo en los sectores estratégicos de la industria. Las materias primas. La energía y el crédito.
-
-La política fiscal debe estar al servicio de tales objetivos al desarrollo económico, social para garantizar una justa distribución de las riqueza a todos/as los ciudadanos/as.
-      </p>
-    </div>
-
-    <!-- Contact Section -->
-    <h2 class="section-title" id="contacto">
-      <span>✉️</span> CONTACTO <span>📞</span>
-    </h2>
-    <div class="contact-grid">
-      <div class="card yellow-border">
-        <h3 style="color: var(--yellow); margin-bottom: 1rem;">Escríbenos</h3>
-        <form action="https://formspree.io/f/xanpekev" method="POST">
-          <input type="text" name="name" placeholder="Tu nombre" required>
-          <input type="email" name="email" placeholder="tu@email.com" required>
-          <textarea name="message" placeholder="Tu mensaje..." rows="5" required></textarea>
-          <button type="submit">Enviar Mensaje</button>
-        </form>
-      </div>
-      <div class="card" style="border-color: var(--green);">
-        <h3 style="color: var(--green); margin-bottom: 1rem;">Información</h3>
-        <p>✉️ prensa@republicaesperanza.org</p>
-        <p>📍 Santo Domingo, República Dominicana</p>
-        <div style="margin-top: 1rem; padding: 1rem; background: var(--black); border: 2px solid var(--red);">
-          <p style="color: var(--red); font-style: italic;">"La verdad está en las sombras. ¡No creas todo lo que lees... o sí!"</p>
+    <!-- Valores -->
+    <section class="section">
+      <h2 class="section-title green">
+        <span>🌱</span> NUESTROS VALORES <span>🌱</span>
+      </h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Solidaridad</h3>
+          <p>Actuamos con empatía y compromiso con las luchas del pueblo trabajador, campesino y marginado.</p>
+        </div>
+        <div class="card">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Justicia Social</h3>
+          <p>Defendemos la redistribución de la riqueza, la educación y salud públicas, y los derechos de todos los sectores oprimidos.</p>
+        </div>
+        <div class="card">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Antiimperialismo</h3>
+          <p>Rechazamos toda forma de dominación extranjera y luchamos por la soberanía nacional en todos los ámbitos.</p>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Actividades -->
+    <section class="section">
+      <h2 class="section-title">
+        <span>📅</span> ACTIVIDADES RECIENTES <span>📅</span>
+      </h2>
+      <div class="grid-2">
+        <div class="card yellow-border">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Asamblea Nacional por la Soberanía Alimentaria</h3>
+          <p>22 de mayo, 2024 — Santo Domingo</p>
+          <p>Agricultores, economistas y comunidades debatieron soluciones a la crisis alimentaria.</p>
+        </div>
+        <div class="card yellow-border">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Campaña "Educación para Todos"</h3>
+          <p>21 de mayo, 2024 — Barrios populares</p>
+          <p>Brigadas de alfabetización y apoyo escolar en zonas marginadas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section" id="contacto">
+      <h2 class="section-title">
+        <span>✉️</span> CONTACTO <span>📞</span>
+      </h2>
+      <div class="contact-grid">
+        <div class="card yellow-border">
+          <h3 style="color: var(--yellow); margin-bottom: 1rem;">Escríbenos</h3>
+          <form action="https://formspree.io/f/xanpekev" method="POST">
+            <input type="text" name="name" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="tu@email.com" required>
+            <textarea name="message" placeholder="Tu mensaje..." rows="5" required></textarea>
+            <button type="submit">Enviar Mensaje</button>
+          </form>
+        </div>
+        <div class="card" style="border-color: var(--green);">
+          <h3 style="color: var(--green); margin-bottom: 1rem;">Únete a Nosotros</h3>
+          <p>📍 Santo Domingo, República Dominicana</p>
+          <p>✉️ contacto@republicaesperanza.org</p>
+          <div style="margin-top: 1rem; padding: 1rem; background: var(--black); border: 2px solid var(--red);">
+            <p style="color: var(--red); font-style: italic;">
+              "La esperanza no es un sentimiento, es una decisión política."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="container text-center">
       <div style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">REPÚBLICA DE ESPERANZA</div>
-      <p>© 2024 - La verdad está en las sombras. Todos los derechos reservados.</p>
-      <p style="color: var(--red); margin-top: 0.5rem;">¡NO CREAS TODO LO QUE LEES... O SÍ!</p>
+      <p>© 2024 - Movimiento por la Salvación de la República (MSR)</p>
+      <p style="color: var(--red); margin-top: 0.5rem;">¡LA VERDAD ESTÁ EN LAS SOMBRAS!</p>
     </div>
   </footer>
 </body>
